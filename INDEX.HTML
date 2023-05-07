@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Booking Website</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+  background-image: url('https://cdn.xxl.thumbs.canstockphoto.com/theatre-or-cinema-curtains-a-set-of-theatre-or-cinema-style-curtains-image_csp7406777.jpg
+
+');
+  background-repeat: no-repeat;
+  background-size: cover ;
+}
+
+header {
+  background-color: white;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: red;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+button[type="submit"],
+button[type="reset"] {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+  background-color: #555;
+}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Movie Booking Website</h1>
+		<nav>
+			<ul>
+				<li><a href="#now-showing">Now Showing</a></li>
+				<li><a href="#booking">Booking</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="now-showing">
+			<h2>Now Showing</h2>
+			<ul>
+				<li>
+					<h3>Movie 1</h3>
+					<p>Showtimes: 10am, 1pm, 4pm</p>
+				</li>
+				<li>
+					<h3>Movie 2</h3>
+					<p>Showtimes: 11am, 2pm, 5pm</p>
+				</li>
+				<li>
+					<h3>Movie 3</h3>
+					<p>Showtimes: 12pm, 3pm, 6pm</p>
+				</li>
+			</ul>
+		</section>
+		<section id="booking">
+			<h2>Booking</h2>
+			<form>
+				<label for="movie-select">Select a movie:</label>
+				<select id="movie-select" name="movie">
+					<option value="">--Select a movie--</option>
+					<option value="movie1">Movie 1</option>
+					<option value="movie2">Movie 2</option>
+					<option value="movie3">Movie 3</option>
+				</select>
+				<div id="seat-map">
+					<h3>Available Seats</h3>
+					<div class="seat-row">
+						<span class="seat">1A</span>
+						<span class="seat">2A</span>
+						<span class="seat">3A</span>
+						<span class="seat">4A</span>
+						<span class="seat">5A</span>
+						<span class="seat">6A</span>
+						<span class="seat">7A</span>
+						<span class="seat">8A</span>
+						<span class="seat">9A</span>
+						<span class="seat">10A</span>
+					</div>
+					<div class="seat-row">
+						<span class="seat">1B</span>
+						<span class="seat">2B</span>
+						<span class="seat">3B</span>
+						<span class="seat">4B</span>
+						<span class="seat">5B</span>
+						<span class="seat">6B</span>
+						<span class="seat">7B</span>
+						<span class="seat">8B</span>
+						<span class="seat">9B</span>
+						<span class="seat">10B</span>
+					</div>
+					<div class="seat-row">
+						<span class="seat">1C</span>
+						<span class="seat">2C</span>
+						<span class="seat">3C</span>
+						<span class="seat">4C</span>
+						<span class="seat">5C</span>
+						<span class="seat">6C</span>
+						<span class="seat">7C</span>
+						<span class="seat">8C</span>
+						<span class="seat">9C</span>
+						<span class="seat">10C</span>
+			 name="seat">
+				<option value="">--Select a seat--</option>
+				<!-- Add options dynamically using JavaScript -->
+			</select>
+			<button type="submit">Book Now</button>
+		</form>
+	</section>
+	<section id="signup">
+		<h2>Sign Up</h2>
+		<form onsubmit="return validateForm()">
+			<label for="reg-id">Registration ID*</label>
+			<input type="text" id="reg-id" name="regId" placeholder="Enter your registration ID" required>
+			<label for="username">Username*</label>
+			<input type="text" id="username" name="username" placeholder="Enter your username" pattern="[A-Za-z]+" required>
+			<label for="password">Password*</label>
+			<input type="password" id="password" name="password" placeholder="Enter your password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" required>
+			<label for="email">Email*</label>
+			<input type="email" id="email" name="email" placeholder="Enter your email address" required>
+			<label for="mobile">Mobile Number*</label>
+			<input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" pattern="[0-9]{10}" required>
+			<label for="dob">Date of Birth*</label>
+			<input type="date" id="dob" name="dob" placeholder="dd/mm/yyyy" required>
+			<button type="submit">Submit</button>
+			<button type="reset">Cancel</button>
+		</form>
+	</section>
+</main>
+<footer>
+	<p>Copyright &copy; 
+	<script>document.write(new Date().getFullYear())</script> 
+	Movie Booking Website. All Rights Reserved.</p>
+</footer>
+<script>
+</body>
+</html>
